@@ -25,7 +25,7 @@ function Book(id, title, author, pages, read) {
     }
 }
 
-Book.prototype.toogleRead = () => {
+Book.prototype.toggleRead = function() {
     this.read = !this.read;
 }
 
@@ -57,7 +57,7 @@ function displayBook(book) {
     const bookPages = document.createElement("p");
     bookPages.textContent = "Pages: " + book.pages;
 
-    const bookRead = document.createElement("p");
+    const bookRead = document.createElement("label");
     bookRead.textContent = "Read";
 
     const bookReadCheckBox = document.createElement("input");
@@ -70,11 +70,12 @@ function displayBook(book) {
     bookDiv.appendChild(bookPages);
     bookDiv.appendChild(bookRead);
     bookDiv.appendChild(bookReadCheckBox);
-    bookDiv.appendChild(bookTitle);
 
     library.appendChild(bookDiv);
 
     removeBtn.addEventListener("click", () => removeBook(book.id, bookDiv));
+
+    bookReadCheckBox.addEventListener("click", () => book.toggleRead());
 }
 
 function removeBook(bookId, bookDiv) {
@@ -106,5 +107,3 @@ bookForm.addEventListener("submit", (e) => {
 
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
 addBookToLibrary("Shadow Hunters", "Cassandra Clare", 500, true);
-
-showLibrary();

@@ -1,0 +1,89 @@
+.container {
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+#showDialog {
+    height: 75px;
+    width: 150px;
+
+    justify-self: center;
+    align-self: center;
+
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(95, 159, 255);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.book {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.book button {
+    width: 80%;
+
+    margin: 5px 10%;
+
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(95, 159, 255);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: white;
+}
+
+.book h2 {
+    width: 80%;
+
+    margin-left: 10%;
+
+    text-align: center;
+}
+
+.book h3 {
+    width: 80%;
+
+    margin-left: 10%;
+
+    text-align: center;
+
+    color: grey;
+}
+
+.book p {
+    width: 80%;
+
+    margin-left: 10%;
+
+    text-align: center;
+
+    color: grey;
+}
+
+.book label {
+    width: 80%;
+
+    margin-left: 10%;
+
+    text-align: center;
+
+    color: grey;
+}
