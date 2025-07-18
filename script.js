@@ -24,10 +24,13 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(crypto.randomUUID() ,title, author, pages, read))
 }
 
+function showLibrary() {
+    for ( let i = 0; i < myLibrary.length ; i++) {
+        console.log(myLibrary[i].info());
+    }
+}
+
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
 addBookToLibrary("Shadow Hunters", "Cassandra Clare", 500, true);
 
-
-for ( let i = 0; i < myLibrary.length ; i++) {
-    console.log(myLibrary[i].info());
-}
+showLibrary();
